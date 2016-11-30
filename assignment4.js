@@ -29,7 +29,6 @@ $(document).ready(function() {
         url: 'http://www.mattbowytz.com/simple_api.json?data=programming ',
         async:true,
         dataType: "json",
-        //data: {get_param: 'all'},
         success: function(info)
         {
             result = info.data;
@@ -42,7 +41,6 @@ $('html').keyup(function(e){
 
     if(e.keyCode == 8) {
         tracker = tracker.substr(0, tracker.length - 1);
-        //console.log(tracker);
     }
 
     if(e.keyCode != 16) {
@@ -52,7 +50,6 @@ $('html').keyup(function(e){
                 checker += (result[k])[j];
                 if ((checker == tracker)) {
 
-                        //$('footer').append("Are you looking for: " + result[k] + "?<br/>");
                     $('.results').append(result[k]+"<br/>");
 
 
@@ -67,8 +64,5 @@ $('html').keyup(function(e){
 
 $(document).keypress(function(e) {
 
-
-        //console.log(String.fromCharCode(e.which));
         tracker += String.fromCharCode(e.which);
-        //console.log(tracker);
 });
